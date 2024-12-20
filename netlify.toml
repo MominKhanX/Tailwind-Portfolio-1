@@ -2,7 +2,4 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  force = true  # This ensures the redirect always takes precedence
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
