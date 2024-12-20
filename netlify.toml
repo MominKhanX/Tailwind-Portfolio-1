@@ -1,28 +1,8 @@
-# Settings for the Netlify build environment
-[build]
-  command = "npm run build"  # or "yarn build", depending on your package manager
-  publish = ".next"          # Publishing directory for Next.js, configured for serverless functions
-
-# Next.js plugin to handle specific functionalities like SSR, API routes, and more
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-# Redirects and rewrites configuration
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
   force = true  # This ensures the redirect always takes precedence
 
-# Optional: Configure headers or additional redirects if needed
-# Custom headers for security, caching, etc.
-[[headers]]
-  for = "/*"  # Apply headers to all pages
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "default-src 'self'"
-
-# Environment variables for the build process
-[build.environment]
-  NODE_VERSION = "16"  # Specify the Node.js version to match your local development
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
